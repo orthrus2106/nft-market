@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+// Fonts
+$font-primary: "Work Sans", sans-serif;
+$font-secondary: "Space Mono", monospace;
+
+// Colors
+$action-color: #A259FF;
+$main-bg-color: #2B2B2B;
+$secondary-bg-color: #3B3B3B;
+
+// Border Radius
+$main-border-radius: 20px;
+
+// Font Size
+$h1-font-size: 67px;
+$h3-font-size: 38px;
+$h4-font-size: 28px;
+$h5-font-size: 22px;
+$main-font-size: 22px;
+$secondary-font-size: 16px;
+
+// Font Weight
+
+$small-font-weight: 400;
+$regular-font-weight: 600;
+$big-font-weight: 700;
+
+// Line Height
+$h1-line-height: 110%;
+$h3-line-height: 120%;
+$h4-line-height: 140%;
+$h5-line-height: 140%;
+$big-line-height: 160%;
+$medium-line-height: 140%;
+$small-line-height: 110%;
+
+// Padding
+
+$big-section-padding-x: 80px;
+$small-section-padding-x: 40px;
+
+// GAPs
+
+$gap-lg: 60px;
+$gap-md: 30px;
+$gap-sm: 20px;
+$gap-xs: 15px;
+$gap-xxs: 12px;
+
+// Breakpoints
+$breakpoint-tablet: 834px;
+$breakpoint-mobile: 746px;

@@ -1,0 +1,9 @@
+@mixin button-filled($padding-x, $padding-y){
+  background-color: $action-color;
+  border-radius: $main-border-radius;
+  padding: $padding-x $padding-y;
+  display: inline-flex;
+  align-items: center;
+  column-gap: $gap-xxs;
+  line-height: 140%;
+}

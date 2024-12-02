@@ -1,0 +1,87 @@
+.hero{
+    padding: $big-section-padding-x;
+    &__inner{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+        gap: $gap-md;
+        text-transform: capitalize;
+    }
+    &__title-wrapper{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    &__text-wrapper{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    &__button-wrapper{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    &__button{
+        @include button-filled(20px, 49px)
+    }
+    &__stats-wrapper{
+        grid-column: 1;
+        grid-row: 4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: $gap-md;
+    }
+    &__preview-wrapper{
+        grid-column: 2;
+        grid-row: 1 / 5;
+        align-self: start;
+        border-radius: $main-border-radius;
+        background-color: $secondary-bg-color;
+        overflow: hidden;
+    }
+    &__preview-content{
+        display: flex;
+        flex-direction: column;
+    }
+    &__preview-description{
+        padding: 20px 22px;
+    }
+    &__preview-img{
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.trending{
+    padding: $big-section-padding-x;
+    &__subtitle{
+        margin-bottom: $gap-lg;
+    }
+    &__cards{
+        display: flex;
+        gap: $gap-md;
+    }
+    &__card-images{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $gap-xs;
+    }
+    &__card-img--big{
+        grid-column: 1/-1;
+    }
+    &__more{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $main-border-radius;
+        background-color: $action-color;
+        width: 100px;
+        height: 100px;
+        &-title{
+            font-family: $font-secondary;
+        }
+    }
+    &__author{
+        margin-top: $gap-xs;
+    }
+}
+

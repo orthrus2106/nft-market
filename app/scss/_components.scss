@@ -1,0 +1,106 @@
+.big-container{
+    max-width: 1180px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.container{
+    max-width: 1050px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.header{
+    padding: 20px 0;
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+    }
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.nav {
+    transition: all 0.3s ease;
+    &__menu-list {
+        display: flex;
+        column-gap: $gap-lg;
+    }
+}
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-start;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  
+    &::before,
+    &::after,
+    span {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+  
+    &::before {
+      top: 0;
+    }
+  
+    &::after {
+      bottom: 0;
+    }
+  
+    span {
+      width: 18px;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  
+    &.active {
+      &::before {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+  
+      &::after {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+  
+      span {
+        transform: scaleX(0); // Прячем среднюю линию
+      }
+    }
+  }
+
+.open {
+    display: flex !important; // Разблокируем отображение меню
+}
+
+.nft__author{
+    display: flex;
+    align-items: center;
+    font-weight: $small-font-weight;
+    column-gap: $gap-xxs;
+    &-link{
+        transition: color 0.3 ease;
+        &:hover{
+            color: $action-color;
+        }
+    }
+}
+
+.nft__info-link{
+    font-size: $main-font-size;
+}
