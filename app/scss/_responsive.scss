@@ -1,3 +1,21 @@
+@media (max-width: $breakpoint-pc-to-tablet){
+    h1{
+        font-size: $h1-font-size-tablet;
+        line-height: $h1-line-height-tablet;
+    }
+    h4{
+        font-size: $h4-font-size-tablet;
+    }
+    body{
+        font-size: $secondary-font-size;
+    }
+    .nav{
+        &__menu-list{
+            gap: $gap-md;
+        }
+    }
+}
+
 @media (max-width: $breakpoint-tablet) {
     .burger {
       display: flex;
@@ -32,5 +50,35 @@
   }
 
 @media (max-width: $breakpoint-mobile) {
-
+    h1{
+        font-size: $h1-font-size-mobile;
+        line-height: $h1-line-height-mobile;
+    }
+    .hero{
+        &__inner{
+            grid-template-columns: 1fr;
+            justify-items: stretch;
+            gap: $gap-xs;
+        }
+        &__title-wrapper{
+            grid-row: 1;
+        }
+        &__text-wrapper{
+            grid-row: 2;
+        }
+        &__button-wrapper{
+            grid-row: 4;
+        }
+        &__button{
+            display: flex;
+        }
+        &__stats-wrapper{
+            column-gap: $gap-xs;
+            grid-row: 5;
+        }
+        &__preview-wrapper{
+            grid-column: 1;
+            grid-row: 3;
+        }
+    }
 }

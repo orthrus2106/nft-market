@@ -15,19 +15,25 @@
     &__inner{
         display: flex;
         justify-content: space-between;
-        // align-items: center;
+        align-items: center;
     }
     &__nav{
         display: flex;
         justify-content: space-between;
     }
+    &__logo{
+      z-index: 50;
+    }
 }
 
 .nav {
-    transition: all 0.3s ease;
     &__menu-list {
         display: flex;
+        align-items: center;
         column-gap: $gap-lg;
+    }
+    &__signup-btn{
+      @include button-filled(20px, 30px);
     }
 }
 
@@ -79,28 +85,34 @@
       }
   
       span {
-        transform: scaleX(0); // Прячем среднюю линию
+        transform: scaleX(0);
       }
     }
   }
 
 .open {
-    display: flex !important; // Разблокируем отображение меню
+    display: flex !important;
 }
 
-.nft__author{
-    display: flex;
-    align-items: center;
-    font-weight: $small-font-weight;
-    column-gap: $gap-xxs;
-    &-link{
-        transition: color 0.3 ease;
-        &:hover{
-            color: $action-color;
-        }
-    }
-}
+.nft__info {
+  font-weight: $small-font-weight;
 
-.nft__info-link{
-    font-size: $main-font-size;
+  &-title {
+      margin-bottom: 10px;
+  }
+
+  &-link {
+      font-size: $main-font-size;
+      transition: color 0.3s ease;
+
+      &:hover {
+          color: $action-color;
+      }
+  }
+
+  .nft__author {
+      display: flex;
+      align-items: center;
+      gap: $gap-xxs;
+  }
 }

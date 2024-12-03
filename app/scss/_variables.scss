@@ -7,6 +7,7 @@ $font-secondary: "Space Mono", monospace;
 
 // Colors
 $action-color: #A259FF;
+$action-hover-color: #8020ff;
 $main-bg-color: #2B2B2B;
 $secondary-bg-color: #3B3B3B;
 
@@ -20,6 +21,11 @@ $h4-font-size: 28px;
 $h5-font-size: 22px;
 $main-font-size: 22px;
 $secondary-font-size: 16px;
+
+// Adaptive Font Size
+$h1-font-size-tablet: 38px;
+$h1-font-size-mobile: 28px;
+$h4-font-size-tablet: 22px;
 
 // Font Weight
 
@@ -36,6 +42,10 @@ $big-line-height: 160%;
 $medium-line-height: 140%;
 $small-line-height: 110%;
 
+// Line Height Apadtive
+$h1-line-height-tablet: 120%;
+$h1-line-height-mobile: 140%;
+
 // Padding
 
 $big-section-padding-x: 80px;
@@ -50,5 +60,6 @@ $gap-xs: 15px;
 $gap-xxs: 12px;
 
 // Breakpoints
+$breakpoint-pc-to-tablet: 978px;
 $breakpoint-tablet: 834px;
 $breakpoint-mobile: 746px;
