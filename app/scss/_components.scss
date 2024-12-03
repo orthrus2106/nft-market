@@ -5,9 +5,13 @@
 }
 
 .container{
-    max-width: 1050px;
+    max-width: $pc-container;
     padding: 0 10px;
     margin: 0 auto;
+}
+
+.section{
+  padding: $big-section-padding-x;
 }
 
 .header{
@@ -35,6 +39,12 @@
     &__signup-btn{
       @include button-filled(20px, 30px);
     }
+    &__menu-link{
+        transition: color 0.3 ease;
+    }
+    &__menu-link:hover{
+        color: $action-color;
+    }
 }
 
 .burger {
@@ -46,6 +56,7 @@
     width: 25px;
     height: 25px;
     cursor: pointer;
+    margin-left: 10px;
   
     &::before,
     &::after,
@@ -103,8 +114,6 @@
 
   &-link {
       font-size: $main-font-size;
-      transition: color 0.3s ease;
-
       &:hover {
           color: $action-color;
       }
@@ -114,5 +123,10 @@
       display: flex;
       align-items: center;
       gap: $gap-xxs;
+      &-link{
+        &:hover {
+          color: $action-color;
+      }
+    }
   }
 }
