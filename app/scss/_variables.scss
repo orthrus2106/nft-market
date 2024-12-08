@@ -10,6 +10,7 @@ $action-color: #A259FF;
 $action-hover-color: #8020ff;
 $main-bg-color: #2B2B2B;
 $secondary-bg-color: #3B3B3B;
+$caption-color: #858584;
 
 // Border Radius
 $main-border-radius: 20px;
@@ -57,7 +58,7 @@ $gap-lg: 60px;
 $gap-md: 30px;
 $gap-sm: 20px;
 $gap-xs: 15px;
-$gap-xxs: 12px;
+$gap-xxs: 10px;
 
 // Breakpoints
 $breakpoint-pc-to-tablet: 978px;
@@ -65,6 +66,6 @@ $breakpoint-tablet: 834px;
 $breakpoint-mobile: 746px;
 
 // Containeres
-$pc-container: 1050px;
-$tablet-container: 690px;
+$pc-container: 1070px;
+$tablet-container: 710px;
 $mobile-container: 315px;

@@ -67,6 +67,30 @@
             gap: $gap-xs;
         }
     }
+    // Creators
+    .creators{
+        &__card{
+            width: 330px;
+            height: 100px;
+            grid-template-columns: auto 1fr;
+            gap: 0;
+        }
+        &__card-avatar{
+            width: 60px;
+            height: 60px;
+            grid-column: 1;
+        }
+        &__card-info{
+            justify-items: start;
+        }
+        &__card-author{
+            justify-self: start;
+        }
+        &__card-rank{
+            left: 10px;
+            top: 10px;
+        }
+    }
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -75,9 +99,9 @@
         font-size: $h1-font-size-mobile;
         line-height: $h1-line-height-mobile;
     }
-    .container{
-        max-width: $mobile-container;
-    }
+    // .container{
+    //     max-width: $mobile-container;
+    // }
     .section{
         padding: $small-section-padding-x 0;
     }
@@ -112,6 +136,19 @@
     .trending{
         &__card:nth-child(n+2) {
             display: none;
+        }
+    }
+    // Creators
+    .creators{
+        &__top{
+            grid-template-columns: 1fr;
+        }
+        &__btn{
+            grid-column: 1;
+            grid-row: 3;
+        }
+        &__cards{
+            gap: $gap-sm;
         }
     }
 }
