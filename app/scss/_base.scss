@@ -66,12 +66,12 @@ body {
   height: 20px;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
-  font-family: $font-primary;
   transition: color 0.3s ease;
   font-size: $secondary-font-size;
+  font-family: $font-primary;
 }
 
 h1 {

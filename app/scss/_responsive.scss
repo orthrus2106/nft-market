@@ -91,6 +91,23 @@
             top: 10px;
         }
     }
+    // Categories
+    .categories{
+        &__cards{
+            gap: $gap-sm;
+        }
+        &__card{
+            width: 150px;
+            height: 210px;
+            font-size: $secondary-font-size;
+        }
+        &__card-top{
+            height: 140px;
+        }
+        &__card-info {
+            padding: 5px 20px;
+        }
+    }
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -99,9 +116,6 @@
         font-size: $h1-font-size-mobile;
         line-height: $h1-line-height-mobile;
     }
-    // .container{
-    //     max-width: $mobile-container;
-    // }
     .section{
         padding: $small-section-padding-x 0;
     }

@@ -169,9 +169,6 @@
         justify-self: center;
         text-transform: capitalize;
     }
-    &__card-link{
-        font-size: inherit;
-    }
     &__card-sales{
         color: $caption-color;
         grid-row: 2;
@@ -182,6 +179,57 @@
     }
 }
 
-.card__sales-wrapper{
+.categories {
+    &__cards {
+        margin-top: $gap-lg;
+        display: flex;
+        gap: $gap-md;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
+    &__card {
+        width: 240px;
+        height: 315px;
+        border-radius: $main-border-radius;
+        background-color: $secondary-bg-color;
+        overflow: hidden;
+    }
+
+    &__card-top {
+        max-height: 240px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 5;
+        overflow: hidden;
+
+        &:hover .categories__card-icon {
+            transform: translateY(-10px);
+        }
+
+        &:hover .categories__card-background {
+            transform: scale(1.1);
+        }
+    }
+
+    &__card-icon {
+        z-index: 4;
+        transition: 0.3s;
+    }
+
+    &__card-background {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        object-fit: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: blur(5px);
+    }
+
+    &__card-info {
+        padding: 20px 30px;
+    }
 }
