@@ -505,23 +505,23 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    z-index: -3;
     &::before{
     content: '';
     position: absolute;
     background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #A259FF 100%);
     inset: 0;
     height: auto;
-    z-index: 1;
+    z-index: -4;
     animation: gradient-pulse 3s infinite ease-in-out;
     background-size: 100%;
-    z-index: 1;
     }
   }
   &__avatar{
     display: flex;
     position: relative;
     margin-top: -65px;
-    z-index: 2;
+    z-index: -2;
   }
   &__avatar-img{
     border: 2px solid $color-main-bg;
@@ -636,8 +636,6 @@
     background-color: $color-caption;
   }
   
-  
-
   // Cards
   &__nft-cards-wrapper{
     background-color: $color-secondary-bg;
