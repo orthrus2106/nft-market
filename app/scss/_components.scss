@@ -1,132 +1,279 @@
-.big-container{
-    max-width: 1200px;
-    padding: 0 10px;
-    margin: 0 auto;
+.big-container {
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: 0 auto;
 }
 
-.container{
-    max-width: $pc-container;
-    padding: 0 10px;
-    margin: 0 auto;
+.container {
+  max-width: $container-pc;
+  padding: 0 10px;
+  margin: 0 auto;
 }
 
-.section{
-  padding: $big-section-padding-x 0;
+.section {
+  padding-block: clamp($padding-small-x, 1.464rem + 4.42vi, $padding-big-x);
 }
 
-.header{
-    padding: 20px 0;
-    &__inner{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__nav{
-        display: flex;
-        justify-content: space-between;
-    }
-    &__logo{
+.section-subtitle{
+  font-size: clamp($font-size-small, 0.299rem + 1.345vi, $font-size-main);
+}
+
+.section__top-simple{
+    margin-bottom: $spacing-lg;
+}
+
+.section-top-with-btn{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    row-gap: $spacing-xxs;
+    column-gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+}
+
+.header {
+  padding: 20px 0;
+
+  &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  &__nav {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  &__logo {
       z-index: 50;
+  }
+}
+
+.footer{
+    background-color: $color-secondary-bg;
+    color: $color-footer;
+    &__inner{
+        padding-block: $spacing-md;
+    }
+    &__top{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+    }
+    &__logo-img{
+        margin-bottom: $spacing-sm;
+    }
+    &__info{
+        width: 240px;
+    }
+    &__info-text{
+        margin-bottom: $spacing-sm;
+    }
+    &__social-text{
+        margin-bottom: $spacing-sm;
+    }
+    &__digest-text{
+        margin-bottom: $spacing-sm;
+    }
+    &__social-list{
+        display: flex;
+        column-gap: $spacing-xxs;
+    }
+    &__titles{
+        margin-bottom: calc($spacing-xs + $spacing-xxs); // 25px
+        font-family: $font-secondary;
+        color: #fff;
     }
 }
 
 .nav {
-    &__menu-list {
-        display: flex;
-        align-items: center;
-        column-gap: $gap-lg;
-    }
-    &__signup-btn{
-      @include button-filled(20px, 30px);
-    }
-    &__menu-link{
-        transition: color 0.3 ease;
-    }
-    &__menu-link:hover{
-        color: $action-color;
-    }
+  &__header-menu-list {
+      display: flex;
+      align-items: center;
+      column-gap: $spacing-lg;
+  }
+
+  &__footer-menu-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-sm;
+  }
+
+  &__signup-btn {
+      @include button-filled(20px, 30px, $color-action);
+  }
+
+  &__menu-link {
+      font-size: $font-weight-small;
+      transition: color 0.3s ease;
+  }
+
+  &__menu-link:hover {
+      color: $color-action;
+  }
 }
 
 .burger {
-    display: none;
-    position: relative;
-    z-index: 50;
-    align-items: center;
-    justify-content: flex-start;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    margin-left: 10px;
-  
-    &::before,
-    &::after,
-    span {
+  display: none;
+  position: relative;
+  z-index: 50;
+  align-items: center;
+  justify-content: flex-start;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin-left: 10px;
+
+  &::before,
+  &::after,
+  span {
       content: '';
       position: absolute;
       height: 2px;
       width: 100%;
       background-color: #fff;
       transition: all 0.3s ease;
-    }
-  
-    &::before {
+  }
+
+  &::before {
       top: 0;
-    }
-  
-    &::after {
+  }
+
+  &::after {
       bottom: 0;
-    }
-  
-    span {
+  }
+
+  span {
       width: 18px;
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-    }
-  
-    &.active {
-      &::before {
-        top: 50%;
-        transform: translateY(-50%) rotate(45deg);
-      }
-  
-      &::after {
-        top: 50%;
-        transform: translateY(-50%) rotate(-45deg);
-      }
-  
-      span {
-        transform: scaleX(0);
-      }
-    }
   }
 
-.open {
-    display: flex !important;
+  &.active {
+      &::before {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+      }
+
+      &::after {
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+      }
+
+      span {
+          transform: scaleX(0);
+      }
+  }
 }
 
-.nft__info {
-  font-weight: $small-font-weight;
+.open {
+  display: flex !important;
+}
 
-  &-title {
-      margin-bottom: 10px;
+.nft {
+  &__card {
+      width: 330px;
+      height: 470px;
+      border-radius: $radius-main;
+      background-color: $color-secondary-bg;
+      overflow: hidden;
   }
 
-  &-link {
-      font-size: $main-font-size;
-      &:hover {
-          color: $action-color;
+  &__card-img{
+    transition: transform 0.3s ease, filter 0.3s ease;
+    &:hover {
+        transform: scale(1.05);
       }
   }
 
-  .nft__author {
+  &__card-info {
+      padding: 20px 30px;
+  }
+
+  &__card-title {
+      padding-bottom: calc($spacing-xxs / 2);
+      line-height: $line-height-medium;
+  }
+  &__card-title-link{
+        &:hover{
+            color: $color-action;
+        }
+  }
+  &__card-author {
       display: flex;
       align-items: center;
-      gap: $gap-xxs;
-      &-link{
-        &:hover {
-          color: $action-color;
-      }
-    }
+      column-gap: $spacing-xxs;
+      font-size: $font-weight-small;
+      line-height: $line-height-medium;
   }
+
+  &__card-author-link {
+      font-family: $font-secondary;
+      font-size: $font-weight-small;
+      font-weight: $font-weight-small;
+      &:hover{
+        color: $color-action;
+      }
+  }
+
+  &__card-prices {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: $spacing-sm;
+  }
+
+  &__card-caption {
+      font-size: $font-size-smaller;
+      color: $color-caption
+  }
+
+  &__card-price {
+      font-size: $font-size-secondary;
+  }
+
+  &__card-caption--bid {
+      justify-self: end;
+  }
+
+  &__card-price--bid {
+      justify-self: end;
+  }
+}
+
+.email-form {
+    position: relative;
+    max-width: 425px;
+    width: auto;
+    &__input {
+            padding-inline: $spacing-sm;
+            padding-right: 180px;
+            border: none;
+            border-radius: $radius-main;
+            height: 60px;
+            width: 100%;
+
+            &:focus, &:active {
+                outline: none;
+                box-shadow: none;
+            }
+
+            &::placeholder {
+                color: $color-caption;
+            }
+        }
+        &__btn {
+            @include button-filled(20px, 50px, $color-action);
+            height: 60px;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            position: absolute;
+            right: 0;
+        }
+}
+
+.email-form--footer{
+    max-width: 330px;
 }

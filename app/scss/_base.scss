@@ -45,6 +45,18 @@ button{
   border: none;
   background-color: transparent;
 }
+button, .email-button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  &:focus,
+  &:active {
+      border: none;
+      outline: none;
+      box-shadow: none;
+  }
+}
 *,
 *::before,
 *::after {
@@ -55,58 +67,63 @@ button{
 
 body {
   color: #fff;
-  background-color: $main-bg-color;
-  font-size: $main-font-size;
-  font-weight: $regular-font-weight;
-  line-height: $big-line-height;
-}
-
-.button-ico{
-  width: 20px;
-  height: 20px;
+  background-color: $color-main-bg;
+  font-family: $font-primary;
 }
 
 a {
   text-decoration: none;
   color: inherit;
   transition: color 0.3s ease;
-  font-size: $secondary-font-size;
-  font-family: $font-primary;
+}
+
+button{
+  &:focus{
+    outline: none;
+  }
 }
 
 h1 {
-  font-size: $h1-font-size;
+  font-size: clamp($font-size-h1-min, 0.74rem + 4.309vw, $font-size-h1-max);
   font-family: $font-primary;
-  font-weight: $regular-font-weight;
-  line-height: $h1-line-height;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-h1;
+}
+
+h2{
+  font-size: clamp($font-size-h2-min, 0.856rem + 2.915vi, $font-size-h2-max);
+  font-weight: $font-weight-medium;
+  line-height: $line-height-smaller;
 }
 
 h3 {
-  font-size: $h3-font-size;
+  // font-size: $font-size-h3;
+  font-size: clamp($font-size-h3-min, 0.581rem + 2.242vi, $font-size-h3-max);
   font-family: $font-primary;
-  font-weight: $regular-font-weight;
-  line-height: $h3-line-height;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-h3;
 }
 
 h4 {
-  font-size: $h4-font-size;
+  font-size: $font-size-h4;
   font-family: $font-secondary;
-  font-weight: $big-font-weight;
-  line-height: $h4-line-height;
+  font-weight: $font-weight-big;
+  line-height: $line-height-h4;
 }
 
 h5 {
-  font-size: $h5-font-size;
+  font-size: clamp($font-size-h5-min, 0.299rem + 1.345vi, $font-size-h5-max);
   font-family: $font-primary;
-  font-weight: $regular-font-weight;
-  line-height: $h5-line-height;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-h5;
 }
 
 p {
   font-family: $font-primary;
-  font-weight: $small-font-weight;
+  font-weight: $font-weight-small;
+  line-height: $line-height-big;
 }
 
-img{
+img {
   max-width: 100%;
 }

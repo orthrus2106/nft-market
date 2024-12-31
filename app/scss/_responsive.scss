@@ -1,33 +1,44 @@
-@media (max-width: $breakpoint-pc-to-tablet){
-    // Main styles
-    h1{
-        font-size: $h1-font-size-tablet;
-        line-height: $h1-line-height-tablet;
-    }
-    h4{
-        font-size: $h4-font-size-tablet;
-    }
-    body{
-        font-size: $secondary-font-size;
-    }
+@media (max-width: $breakpoint-pc-to-tablet) {
     // Header
-    .nav{
-        &__menu-list{
-            gap: $gap-md;
+    .nav {
+        &__menu-list {
+            gap: $spacing-md;
         }
     }
 }
 
 @media (max-width: $breakpoint-tablet) {
-    .container{
-        max-width: $tablet-container;
+    // Base
+    h1{
+        line-height: $line-height-small;
+    }
+    p{
+        line-height: $line-height-medium;
+    }
+    .container {
+        max-width: $container-tablet;
+    }
+    // Components
+    .email-form{
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        row-gap: $spacing-xs;
+        &__input{
+            height: 45px;
+        }
+        &__btn{
+            position: static;
+            height: 45px;
+        }
+
     }
     // Header
     .burger {
-      display: flex;
+        display: flex;
     }
-  
-    .nav {
+
+    .nav__header {
         visibility: hidden;
         opacity: 0;
         transform: translateX(100%);
@@ -41,128 +52,258 @@
         background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(20px);
         transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-      
-        &__menu-list {
-          display: flex;
-          flex-direction: column;
-          gap: $gap-md;
-          align-items: center;
+
+        &-menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-md;
+            align-items: center;
         }
-      
+
         &.open {
-          visibility: visible;
-          opacity: 1;
-          transform: translateX(0);
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0);
         }
-      }      
+    }
+
     // Trending
-    .trending{
+    .trending {
         &__card:nth-child(n+3) {
             display: none;
         }
-        &__subtitle{
-            margin-bottom: $gap-md;
+        &__subtitle {
+            margin-bottom: $spacing-md;
         }
-        &__card-images{
-            gap: $gap-xs;
+        &__card-images {
+            gap: $spacing-xs;
         }
     }
     // Creators
-    .creators{
-        &__card{
+    .creators {
+        &__card {
             width: 330px;
             height: 100px;
             grid-template-columns: auto 1fr;
             gap: 0;
         }
-        &__card-avatar{
+        &__card-avatar {
             width: 60px;
             height: 60px;
             grid-column: 1;
         }
-        &__card-info{
+        &__card-info {
             justify-items: start;
         }
-        &__card-author{
+        &__card-author {
             justify-self: start;
         }
-        &__card-rank{
+        &__card-rank {
             left: 10px;
             top: 10px;
         }
     }
     // Categories
-    .categories{
-        &__cards{
-            gap: $gap-sm;
+    .categories {
+        &__cards {
+            gap: $spacing-sm;
         }
-        &__card{
+        &__card {
             width: 150px;
             height: 210px;
-            font-size: $secondary-font-size;
+            font-size: $font-weight-small;
         }
-        &__card-top{
+        &__card-top {
             height: 140px;
         }
         &__card-info {
             padding: 5px 20px;
         }
+        &__card-link{
+            font-size: $font-size-small;
+        }
+    }
+    // Highlighted
+    .highlighted{
+        &__content{
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, auto);
+            justify-items: stretch;
+        }
+        &__author{
+            grid-row: 1;
+            justify-self: start;
+        }
+        &__title{
+            grid-column: 1;
+            grid-row: 2;
+        }
+        &__btn{
+            grid-column: 1;
+            grid-row: 4;
+        }
+        &__auction{
+            grid-column: 1;
+            grid-row: 3;
+            // align-self: start;
+            justify-self: start;
+        }
+    }
+
+    // Footer
+    .footer{
+        &__top{
+            grid-template-columns: 1fr;
+            row-gap: $spacing-sm;
+        }
+    }
+
+    // Profile
+    .profile{
+        &__content{
+            grid-template-columns: 1fr;
+        }
+        &__button-wrapper{
+            grid-column: 1;
+            grid-row: 2;
+            justify-self: start;
+        }
     }
 }
 
-@media (max-width: $breakpoint-mobile) {
-    // Main Styles
-    h1{
-        font-size: $h1-font-size-mobile;
-        line-height: $h1-line-height-mobile;
+@media (max-width: 600px){
+    .subscription{
+        &__inner{
+            display: flex;
+            justify-content: center;
+        }
+        &__wrapper{
+            padding: 0;
+            background-color: $color-main-bg;
+            flex-direction: column; // Ставим элементы в столбик
+            align-items: stretch; // Растягиваем все элементы
+            justify-content: center;
+        }
     }
-    .section{
-        padding: $small-section-padding-x 0;
+    .email-form--subscription{
+        max-width: none;
+        width: 100%;
+    }
+    .guide{
+        &__card{
+            max-width: none;
+            width: auto;
+        }
+    }
+        // Registration
+        .registration{
+            &__inner{
+                grid-template-columns: 1fr;
+                align-items: center;
+                justify-items: center;
+            }
+            &__img{
+                width: 100%;
+            }
+            &__content{
+                justify-self: center;
+            }
+            &-form{
+                max-width: none;
+            }
+        }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    // Base
+    h1{
+        line-height: $line-height-smaller;
+    }
+    .section-top-with-btn{
+        grid-template-columns: 1fr;
     }
     // Hero
-    .hero{
-        &__inner{
+    .hero {
+        &__inner {
             grid-template-columns: 1fr;
             justify-items: stretch;
-            gap: $gap-xs;
+            gap: $spacing-xs;
         }
-        &__title-wrapper{
+        &__title-wrapper {
             grid-row: 1;
         }
-        &__text-wrapper{
+        &__text-wrapper {
             grid-row: 2;
         }
-        &__button-wrapper{
+        &__button-wrapper {
             grid-row: 4;
         }
-        &__button{
+        &__button {
             display: flex;
         }
-        &__stats-wrapper{
+        &__stats-wrapper {
             grid-row: 5;
         }
-        &__preview-wrapper{
+        &__preview-wrapper {
             grid-column: 1;
             grid-row: 3;
         }
     }
     // Trending
-    .trending{
+    .trending {
         &__card:nth-child(n+2) {
             display: none;
         }
     }
     // Creators
-    .creators{
-        &__top{
-            grid-template-columns: 1fr;
-        }
-        &__btn{
+    .creators {
+        // &__top {
+        //     grid-template-columns: 1fr;
+        // }
+        &__btn {
             grid-column: 1;
             grid-row: 3;
         }
-        &__cards{
-            gap: $gap-sm;
+        &__cards {
+            gap: $spacing-sm;
+        }
+    }
+    // NFT Card (Global)
+    .nft{
+        &__card{
+            width: 315px;
+        }
+        &__card-info {
+            padding: $spacing-sm $spacing-sm;
+        }
+    }
+    // Discover
+    .discover{
+        // &__top {
+        //     grid-template-columns: 1fr;
+        // }
+        &__btn {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        &__cards {
+            gap: $spacing-sm;
+        }
+    }
+    // Profile
+    .profile{
+        &__avatar{
+            justify-content: center;
+        }
+        &__stats{
+            justify-items: center;            
+        }
+        &__button-wrapper{
+            flex-direction: column;
+            justify-self: stretch;
+        }
+        &__tabs-count{
+            display: none;
         }
     }
 }

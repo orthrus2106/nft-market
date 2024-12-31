@@ -1,71 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-
 // Fonts
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 $font-primary: "Work Sans", sans-serif;
 $font-secondary: "Space Mono", monospace;
 
 // Colors
-$action-color: #A259FF;
-$action-hover-color: #8020ff;
-$main-bg-color: #2B2B2B;
-$secondary-bg-color: #3B3B3B;
-$caption-color: #858584;
+$color-action: #A259FF;
+$color-action-hover: #8020FF;
+$color-main-bg: #2B2B2B;
+$color-secondary-bg: #3B3B3B;
+$color-caption: #858584;
+$color-footer: #CCCCCC;
 
 // Border Radius
-$main-border-radius: 20px;
+$radius-main: 1.25rem; // 20px
 
-// Font Size
-$h1-font-size: 67px;
-$h3-font-size: 38px;
-$h4-font-size: 28px;
-$h5-font-size: 22px;
-$main-font-size: 22px;
-$secondary-font-size: 16px;
+// Font Sizes (in rem)
+$font-size-h1-max: 4.188rem; // 67px
+$font-size-h1-min: 1.75rem; // 28px
+$font-size-h2-max: 3.1875rem; // 51px
+$font-size-h2-min: 2.375rem; // 38px
+$font-size-h3-max: 2.375rem;  // 38px
+$font-size-h3-min: 1.75rem;   // 28px
+$font-size-h4: 1.75rem;   // 28px
+$font-size-h5-max: 1.375rem;  // 22px
+$font-size-h5-min: 1rem; // 16px
+$font-size-main: 1.375rem; // 22px
+$font-size-secondary: 1.125rem; // 18px
+$font-size-small: 1rem; // 16px
+$font-size-smaller: 0.75rem; // 12px
 
-// Adaptive Font Size
-$h1-font-size-tablet: 38px;
-$h1-font-size-mobile: 28px;
-$h4-font-size-tablet: 22px;
+// Line Heights
+$line-height-h1: 1.1;
+$line-height-h3: 1.2;
+$line-height-h4: 1.4;
+$line-height-h5: 1.4;
+$line-height-big: 1.6;
+$line-height-medium: 1.4;
+$line-height-small: 1.2;
+$line-height-smaller: 1.1;
 
 // Font Weight
 
-$small-font-weight: 400;
-$regular-font-weight: 600;
-$big-font-weight: 700;
+$font-weight-small: 400;
+$font-weight-medium: 600;
+$font-weight-big: 700;
 
-// Line Height
-$h1-line-height: 110%;
-$h3-line-height: 120%;
-$h4-line-height: 140%;
-$h5-line-height: 140%;
-$big-line-height: 160%;
-$medium-line-height: 140%;
-$small-line-height: 110%;
+// Section Paddings (in rem)
+$padding-big-x: 5rem;   // 80px
+$padding-small-x: 2.5rem; // 40px
 
-// Line Height Apadtive
-$h1-line-height-tablet: 120%;
-$h1-line-height-mobile: 140%;
+// Spacings (in rem)
+$spacing-lg: 3.75rem;  // 60px
+$spacing-md: 1.875rem; // 30px
+$spacing-sm: 1.25rem;  // 20px
+$spacing-xs: 0.9375rem; // 15px
+$spacing-xxs: 0.625rem; // 10px
 
-// Padding
-
-$big-section-padding-x: 80px;
-$small-section-padding-x: 40px;
-
-// GAPs
-
-$gap-lg: 60px;
-$gap-md: 30px;
-$gap-sm: 20px;
-$gap-xs: 15px;
-$gap-xxs: 10px;
-
-// Breakpoints
+// Breakpoints (in px)
 $breakpoint-pc-to-tablet: 978px;
 $breakpoint-tablet: 834px;
-$breakpoint-mobile: 746px;
+$breakpoint-mobile: 450px;
 
-// Containeres
-$pc-container: 1070px;
-$tablet-container: 710px;
-$mobile-container: 315px;
+// Containers (in px, as requested)
+$container-pc: 1070px;
+$container-tablet: 710px;
+$container-mobile: 315px;

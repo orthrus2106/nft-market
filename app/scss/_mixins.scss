@@ -1,32 +1,52 @@
-@mixin button-filled($padding-x, $padding-y){
-  background-color: $action-color;
-  border-radius: $main-border-radius;
+@use "sass:math";
+
+@mixin button-filled($padding-x, $padding-y, $color){
+  background-color: $color;
+  border-radius: $radius-main;
   padding: $padding-x $padding-y;
+  color: #fff;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  column-gap: $gap-xxs;
+  text-transform: capitalize;
+  cursor: pointer;
+  column-gap: $spacing-xxs;
   line-height: 140%;
   font-family: $font-primary;
-  transition: background-color .3s ease;
+  font-size: $font-weight-small;
+  font-weight: $font-weight-medium;
+  transition: all .3s ease;
   &:hover{
-    background-color: $action-hover-color;
+    background-color: $color-action-hover;
+    color: #fff;
   }
 }
 
 @mixin button-outlined($padding-x, $padding-y){
   background-color: transparent;
-  border-radius: $main-border-radius;
-  border: 2px solid $action-color;
+  border-radius: $radius-main;
+  border: 2px solid $color-action;
   padding: $padding-x $padding-y;
+  color: #fff;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  column-gap: $gap-xxs;
+  column-gap: $spacing-xxs;
+  cursor: pointer;
   line-height: 140%;
   font-family: $font-primary;
+  font-size: $font-weight-small;
+  font-weight: $font-weight-medium;
+  text-transform: capitalize;
   transition: background-color .3s ease;
   &:hover{
-    background-color: $action-color;
+    background-color: $color-action;
   }
+}
+
+@mixin cards-wrapper{
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+  justify-content: center;
 }
