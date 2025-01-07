@@ -33,7 +33,6 @@
 
 .header {
   padding: 20px 0;
-
   &__inner {
       display: flex;
       justify-content: space-between;
@@ -168,6 +167,11 @@
   }
 }
 
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
 .open {
   display: flex !important;
 }
@@ -277,3 +281,61 @@
 .email-form--footer{
     max-width: 330px;
 }
+
+// Tabs
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    /* Свойство для управления положением бордера */
+    --active-tab-index: 0;
+    &-item {
+        display: flex;
+        justify-self: center;
+        column-gap: $spacing-xs;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        padding-block: $spacing-xxs;
+        outline: none;
+        position: relative;
+      }
+      
+      &-name {
+        color: $color-caption;
+      }
+      
+      &-count {
+        color: #fff;
+        background-color: $color-secondary-bg;
+        border-radius: $radius-main;
+        width: 50px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-secondary;
+      }
+      
+      &-item--active h5 {
+        color: #fff;
+      }
+      
+      &-item--active span {
+        background-color: $color-caption;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: calc(100% / 3);
+        height: 2px;
+        background-color: $color-caption;
+        transition: transform 0.3s ease;
+        transform: translateX(calc(var(--active-tab-index) * 100%));
+      }
+  }
+  

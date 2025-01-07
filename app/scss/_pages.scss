@@ -350,6 +350,9 @@
       flex-direction: column;
       row-gap: $spacing-xxs;
     }
+    &__auction-colon{
+      margin-left: $spacing-xxs;
+    }
     &__auction-label{
       font-family: $font-secondary;
       font-size: $font-size-smaller;
@@ -460,7 +463,7 @@
   &-form__group{
     position: relative;
     margin-bottom: 15px;
-    z-index: -1;
+    z-index: 0;
   }
   &-form__input{
     width: 100%;
@@ -579,62 +582,62 @@
   }
 
   // Tabs
-  &__tabs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    position: relative;
+  // &__tabs {
+  //   display: grid;
+  //   grid-template-columns: repeat(3, 1fr);
+  //   position: relative;
   
-    /* Свойство для управления положением бордера */
-    --active-tab-index: 0;
-  }
+  //   /* Свойство для управления положением бордера */
+  //   --active-tab-index: 0;
+  // }
   
-  &__tabs-item {
-    display: flex;
-    justify-self: center;
-    column-gap: $spacing-xs;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    padding-block: $spacing-xxs;
-    outline: none;
-    position: relative;
-  }
+  // &__tabs-item {
+  //   display: flex;
+  //   justify-self: center;
+  //   column-gap: $spacing-xs;
+  //   cursor: pointer;
+  //   align-items: center;
+  //   justify-content: center;
+  //   padding-block: $spacing-xxs;
+  //   outline: none;
+  //   position: relative;
+  // }
   
-  &__tabs-name {
-    color: $color-caption;
-  }
+  // &__tabs-name {
+  //   color: $color-caption;
+  // }
   
-  &__tabs-count {
-    color: #fff;
-    background-color: $color-secondary-bg;
-    border-radius: $radius-main;
-    width: 50px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $font-secondary;
-  }
+  // &__tabs-count {
+  //   color: #fff;
+  //   background-color: $color-secondary-bg;
+  //   border-radius: $radius-main;
+  //   width: 50px;
+  //   height: 30px;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   font-family: $font-secondary;
+  // }
   
-  &__tabs::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: calc(100% / 3);
-    height: 2px;
-    background-color: $color-caption;
-    transition: transform 0.3s ease;
-    transform: translateX(calc(var(--active-tab-index) * 100%));
-  }
+  // &__tabs::after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: calc(100% / 3);
+  //   height: 2px;
+  //   background-color: $color-caption;
+  //   transition: transform 0.3s ease;
+  //   transform: translateX(calc(var(--active-tab-index) * 100%));
+  // }
   
-  &__tabs-item--active h5 {
-    color: #fff;
-  }
+  // &__tabs-item--active h5 {
+  //   color: #fff;
+  // }
   
-  &__tabs-item--active span {
-    background-color: $color-caption;
-  }
+  // &__tabs-item--active span {
+  //   background-color: $color-caption;
+  // }
   
   // Cards
   &__nft-cards-wrapper{
@@ -651,4 +654,276 @@
   &__nft-card{
     background-color: $color-main-bg;
   }
+}
+
+// NFT Page
+
+.nft-page{
+  &__cover-img{
+    width: 100%;
+    max-height: 560px;
+    min-height: 320px;
+  }
+  // &__cover{
+  //   max-height: 560px;
+  // }
+  &__block{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-xxs;
+  }
+  &__caption{
+    font-family: $font-secondary;
+    color: $color-caption;
+  }
+  &__inner{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(5, auto);
+    row-gap: $spacing-md;
+    padding-block: calc($spacing-xs * 2);
+  }
+  &__info{
+    grid-column: 1;
+  }
+  &__date{
+    color: $color-caption;
+  }
+  &__creator{
+    grid-column: 1;
+  }
+  &__author-wrapper{
+    display: flex;
+    align-items: center;
+    column-gap: $spacing-xxs;
+  }
+  &__author{
+    font-weight: $font-weight-big;
+  }
+  &__description{
+    grid-column: 1;
+  }
+  &__text{
+    white-space: pre-line;
+    max-width: 605px;
+  }
+  &__details{
+    grid-column: 1;
+  }
+  &__links{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-xxs;
+  }
+  &__link-wrapper{
+    display: flex;
+    align-items: center;
+    column-gap: $spacing-xxs;
+  }
+  &__tags{
+    grid-column: 1;
+  }
+  &__tags-wrapper{
+    display: flex;
+    gap: $spacing-sm;
+  }
+  &__tag{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: $spacing-xxs $spacing-md;
+    border-radius: $radius-main;
+    background-color: $color-secondary-bg;
+    text-transform: uppercase;
+  }
+  &__timer{
+    grid-column: 2;
+    grid-row: -1 / 1;
+    justify-self: end;
+    align-self: start;
+    justify-items: center;
+  }
+  &__timer-inner{
+    border-radius: $radius-main;
+    padding: $spacing-md;
+    background: rgba(59, 59, 59, 0.5);
+    backdrop-filter: blur(5px);
+  }
+  &__timer-title{
+    font-family: $font-secondary;
+    font-size: $font-size-smaller;
+    font-weight: $font-weight-small;
+    margin-bottom: $spacing-xxs;
+  }
+  &__timer-time {
+    font-size: $font-size-h3-max;
+    font-weight: $font-weight-big;
+  }
+  &__timer-list{
+    display: flex;
+    column-gap: $spacing-sm;
+  }
+  &__timer-item{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-xxs;
+  }
+  &__timer-label{
+    font-family: $font-secondary;
+    font-size: $font-size-smaller;
+    font-weight: $font-weight-small;
+  }
+  &__timer-btn{
+    @include button-filled(20px, 80px, $color-action);
+    margin-top: $spacing-md;
+  }
+  &__more-cards{
+    @include cards-wrapper;
+  }
+}
+
+// Marketplace
+
+.browsing{
+  &__top{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-xxs;
+    margin-bottom: $spacing-md;
+  }
+  &__form{
+    display: flex;
+    position: relative;
+  }
+  &__input{
+    outline: none;
+    width: 100%;
+    height: 60px;
+    padding: 20px 70px 20px 20px;
+    border-radius: $radius-main;
+    border: 1px solid $color-secondary-bg;
+    background: transparent;
+    color: #fff;
+  }
+  &__btn{
+    position: absolute;
+    right: $spacing-sm;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
+}
+
+.marketplace{
+  &__tabs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    justify-items: center;
+    --active-tab-index: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: calc(100% / 2);
+      height: 2px;
+      background-color: $color-caption;
+      transition: transform 0.3s ease;
+      transform: translateX(calc(var(--active-tab-index) * 100%));
+    }
+  }
+}
+
+// Rankings
+
+.rankings{
+  &__top{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-sm;
+    padding-block: 80px;
+  }
+  &__tabs{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative;
+    justify-items: center;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: calc(100% / 4);
+      height: 2px;
+      background-color: $color-caption;
+      transition: transform 0.3s ease;
+      transform: translateX(calc(var(--active-tab-index) * 100%));
+    }
+  }
+  &__tabs-name--mobile{
+    display: none;
+  }
+  &__table{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-sm;
+  }
+  &__table-header{
+    padding: $spacing-xxs $spacing-sm;
+    border: 1px solid $color-secondary-bg;
+    border-radius: $radius-main;
+    margin-top: calc($spacing-sm * 2);
+  }
+  &__cell--rank{
+    margin-right: $spacing-sm;
+  }
+  &__table-row--header{
+    color: $color-caption;
+    font-family: $font-secondary;
+    display: grid;
+    grid-template-columns: auto 3fr 1fr 1fr 1fr;
+    align-items: center;
+  }
+  &__table-body{
+    display: flex;
+    flex-direction: column;
+    row-gap: $spacing-sm;
+  }
+  &__table-row{
+    background-color: $color-secondary-bg;
+    border-radius: $radius-main;
+    padding: $spacing-xxs $spacing-sm;
+    display: grid;
+    grid-template-columns: auto 3fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-secondary;
+  }
+  &__cell--rank{
+    color: $color-caption;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $color-main-bg;
+    width: 1.875rem; // 30px
+    height: 1.875rem; // 30px
+    font-size: $font-weight-small;
+    font-weight: $font-weight-small;
+  }
+  &__cell--author{
+    display: flex;
+    column-gap: $spacing-sm;
+    align-items: center;
+  }
+  &__avatar{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.positive-change{
+  color: #00AC4F;
 }

@@ -5,6 +5,18 @@
             gap: $spacing-md;
         }
     }
+    // NFT Page
+    .nft-page{
+        &__inner{
+            grid-template-columns: 1fr;
+        }
+        &__timer{
+            grid-column: 1;
+            grid-row: 2;
+            justify-self: start;
+            align-self: auto;
+        }
+    }
 }
 
 @media (max-width: $breakpoint-tablet) {
@@ -64,6 +76,7 @@
             visibility: visible;
             opacity: 1;
             transform: translateX(0);
+            z-index: 3;
         }
     }
 
@@ -169,9 +182,62 @@
             justify-self: start;
         }
     }
+    // NFT Page
+    .nft-page{
+        &__tags-wrapper{
+            flex-direction: column;
+            justify-self: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    // Rankings
+    .rankings{
+        &__table-row--header{
+            grid-template-columns: auto 3fr 1fr 1fr;
+        }
+        &__table-row{
+            grid-template-columns: auto 3fr 1fr 1fr;
+        }
+        &__cell--sold{
+            display: none;
+        }
+        &__avatar{
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
 
 @media (max-width: 600px){
+        // Hero
+        .hero {
+            &__inner {
+                grid-template-columns: 1fr;
+                justify-items: stretch;
+                gap: $spacing-xs;
+            }
+            &__title-wrapper {
+                grid-row: 1;
+            }
+            &__text-wrapper {
+                grid-row: 2;
+            }
+            &__button-wrapper {
+                grid-row: 4;
+            }
+            &__button {
+                display: flex;
+            }
+            &__stats-wrapper {
+                grid-row: 5;
+            }
+            &__preview-wrapper {
+                grid-column: 1;
+                grid-row: 3;
+            }
+        }
+    // Subscription
     .subscription{
         &__inner{
             display: flex;
@@ -189,29 +255,30 @@
         max-width: none;
         width: 100%;
     }
+    // Guide
     .guide{
         &__card{
             max-width: none;
             width: auto;
         }
     }
-        // Registration
-        .registration{
-            &__inner{
-                grid-template-columns: 1fr;
-                align-items: center;
-                justify-items: center;
-            }
-            &__img{
-                width: 100%;
-            }
-            &__content{
-                justify-self: center;
-            }
-            &-form{
-                max-width: none;
-            }
+    // Registration
+    .registration{
+        &__inner{
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-items: center;
         }
+        &__img{
+            width: 100%;
+        }
+        &__content{
+            justify-self: center;
+        }
+        &-form{
+            max-width: none;
+        }
+    }
 }
 
 @media (max-width: $breakpoint-mobile) {
@@ -222,31 +289,10 @@
     .section-top-with-btn{
         grid-template-columns: 1fr;
     }
-    // Hero
-    .hero {
-        &__inner {
-            grid-template-columns: 1fr;
-            justify-items: stretch;
-            gap: $spacing-xs;
-        }
-        &__title-wrapper {
-            grid-row: 1;
-        }
-        &__text-wrapper {
-            grid-row: 2;
-        }
-        &__button-wrapper {
-            grid-row: 4;
-        }
-        &__button {
-            display: flex;
-        }
-        &__stats-wrapper {
-            grid-row: 5;
-        }
-        &__preview-wrapper {
-            grid-column: 1;
-            grid-row: 3;
+    // Tabs
+    .tabs{
+        &-count{
+            display: none;
         }
     }
     // Trending
@@ -302,8 +348,27 @@
             flex-direction: column;
             justify-self: stretch;
         }
-        &__tabs-count{
+    }
+
+    // Rankings
+    .rankings{
+        &__table-row--header{
+            grid-template-columns: auto 2fr 1fr;
+        }
+        &__table-row{
+            grid-template-columns: auto 2fr 1fr;
+        }
+        &__cell--change{
             display: none;
+        }
+        &__tabs-name--pc{
+            display: none;
+        }
+        &__tabs-name--mobile{
+            display: block;
+        }
+        &__cell--author{
+            column-gap: $spacing-xxs;
         }
     }
 }

@@ -20,6 +20,12 @@
     background-color: $color-action-hover;
     color: #fff;
   }
+  svg path {
+    transition: fill 0.3s ease;
+  }
+  &:hover svg path {
+    fill: #fff;
+  }
 }
 
 @mixin button-outlined($padding-x, $padding-y){
@@ -39,8 +45,14 @@
   font-weight: $font-weight-medium;
   text-transform: capitalize;
   transition: background-color .3s ease;
+  svg path {
+    transition: fill 0.3s ease;
+  }
   &:hover{
     background-color: $color-action;
+  }
+  &:hover svg path {
+    fill: #fff;
   }
 }
 
