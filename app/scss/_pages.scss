@@ -839,12 +839,14 @@
     display: flex;
     flex-direction: column;
     row-gap: $spacing-sm;
+    margin-bottom: $spacing-md;
   }
   &__tabs{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     position: relative;
     justify-items: center;
+
     &::after {
       content: '';
       position: absolute;
@@ -913,7 +915,7 @@
     display: flex;
     column-gap: $spacing-sm;
     align-items: center;
-    margin-right: $spacing-sm;
+    margin-right: $spacing-xs;
   }
   &__avatar{
     width: 60px;
