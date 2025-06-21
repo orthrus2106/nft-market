@@ -1,5 +1,5 @@
 # NFT Marketplace
- This is layout project I made while learning HTML and CSS. The main goal was to practice building a clean and responsive page. There is some JavaScript, but it's very basic
+ This is layout project I made while learning HTML and CSS. The main goal was to practice building a clean and responsive page.
 
  ## What did I use
 
