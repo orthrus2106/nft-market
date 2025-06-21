@@ -26,9 +26,9 @@ tabs.forEach((tab, index) => {
 
 
 // Main page Timer
-const hoursElement = document.querySelector('.highlighted__auction-hours');
-const minutesElement = document.querySelector('.highlighted__auction-minutes');
-const secondsElement = document.querySelector('.highlighted__auction-seconds');
+const hoursElement = document.querySelector('#hours');
+const minutesElement = document.querySelector('#minutes');
+const secondsElement = document.querySelector('#seconds');
 
 let hours = 11;
 let minutes = 32;
